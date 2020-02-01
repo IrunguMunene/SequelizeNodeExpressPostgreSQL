@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+            crossorigin="anonymous">
+
+
+        <link rel="stylesheet" href="/css/style.css">
+        <title>CodeGig</title>
+    </head>
+
+    <body>
+        <header class="inner" id="mainHeader">
+            <h2><a href="/"><i class="fas fa-code"></i>
+                CodeGig</a></h2>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="/gigs">All Gigs</a>
+                    </li>
+                    <li>
+                        <a href="/gigs/add">Add Gig</a>
+                    </li>   
+                </ul>
+            </nav>
+        </header>
+        <div class="container">
+            {{{body}}}
+        </div>
+        <script>
+            // Get the header
+            var header = document.getElementById("myHeader");
+
+            // Get the offset position of the navbar
+            var sticky = header.offsetTop;
+
+            // Add the sticky class to the header when you reach its scroll position. 
+            // Remove "sticky" when you leave the scroll position
+            const staticHeader = () => {
+                if (window.pageYOffset > sticky) {
+                    header.classList.add("sticky");
+                } else {
+                    header.classList.remove("sticky");
+                }
+            };
+
+            // When the user scrolls the page, execute myFunction
+            window.onscroll = staticHeader();
+        </script>  
+    </body>
+</html>
